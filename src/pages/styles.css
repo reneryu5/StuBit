@@ -1,0 +1,145 @@
+/* Form.css */
+
+/* Light mode variables */
+:root {
+  --form-background-light: linear-gradient(to bottom right, #a0c1ff, #e9bfff);
+  --form-heading-color-light: #303f9f;
+  --form-paragraph-color-light: #757575;
+  --form-input-focus-light: #5c6bc0;
+  --form-button-gradient-light: linear-gradient(to right, #a0c1ff, #e9bfff);
+  --form-button-hover-light: #8c9eff;
+  --form-link-color-light: #303f9f;
+  --form-link-hover-color-light: #1a237e;
+}
+
+/* Dark mode variables */
+body.dark {
+  --form-background-light: linear-gradient(to bottom right,#070F2B, #6e6f8f);
+  --form-heading-color-light: #c1c7ff;
+  --form-paragraph-color-light: #cccccc;
+  --form-input-focus-light: #a1a6ff;
+  --form-button-gradient-light: linear-gradient(to right, #535C91, #6e6f8f);
+  --form-button-hover-light: #888bbf;
+  --form-link-color-light: #c1c7ff;
+  --form-link-hover-color-light: #d1d7ff;
+}
+
+/* Form container */
+.form-container {
+  background: var(--form-background-light); /* Form container gradient */
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.form-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--form-heading-color-light); /* Heading color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 1s ease-out;
+}
+
+.form-container p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: var(--form-paragraph-color-light); /* Paragraph color */
+  animation: fadeInDown 1s ease-out;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  font-family: 'Mina', sans-serif; /* Apply Mina font to inputs */
+}
+
+.form-container input::placeholder {
+  font-family: 'Mina', sans-serif; /* Apply Mina font to placeholders */
+}
+
+.form-container input:focus {
+  box-shadow: 0 0 5px var(--form-input-focus-light);
+  transform: scale(1.02);
+}
+
+/* Button styles */
+.form-container button {
+  padding: 12px 25px;
+  background: var(--form-button-gradient-light); /* Button gradient */
+  color: white;
+  border: 2px solid black; /* Black outline */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.form-container button:hover {
+  background-color: var(--form-button-hover-light); /* Button hover color */
+  transform: scale(1.05);
+}
+
+.form-container a {
+  color: var(--form-link-color-light); /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+  color: var(--form-link-hover-color-light);
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

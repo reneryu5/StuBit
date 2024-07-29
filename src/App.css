@@ -1,0 +1,98 @@
+/* Import Mina font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap');
+
+:root {
+  --background-light: linear-gradient(to bottom, #ffffff, #b2ebf2);
+  --background-dark: linear-gradient(to bottom, #535C91, #9290C3);
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+}
+
+body {
+  font-family: 'Mina', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-light);
+  color: var(--text-color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* App container */
+.app {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the content takes full width */
+  padding: 20px; /* Add some padding */
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Dark mode styles */
+body.dark {
+  background: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header, .footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .header, .footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 5px;
+  }
+}

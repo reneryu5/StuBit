@@ -1,0 +1,70 @@
+iframe {
+    border-radius: 20px;
+    border-color: #d780fa;
+  }
+  
+  iframe:hover {
+    background-color: #d780fa;
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  img {
+    border-radius: 50%;
+    padding: 0;
+    margin:0;
+  }
+  
+  img:hover {
+    background-color: #d780fa;
+    cursor: pointer;
+    padding: 0;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pulse-button {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .pulse-button:hover {
+    animation: pulse 1.5s 0.4s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 5px rgb(205, 98, 255);
+    }
+  
+    70% {
+      box-shadow: 0 0 0 5px rgb(249, 235, 255);
+    }
+  
+    100% {
+      box-shadow: 0 0 0 5px rgb(255, 255, 255);
+    }
+  }
+  
+  
+  .btn-container {
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  
+  }
+  
+  .btn-box btn-small-box {
+    display: inline-flex;
+  }
+  
+  .btn-box btn-large-box {
+    display: inline-flex;
+  }

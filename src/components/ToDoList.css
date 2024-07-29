@@ -1,0 +1,314 @@
+/* Dark mode variables */
+body.dark {
+  
+  --background-l: linear-gradient(to bottom right, #535C91, #9290C3);
+  --form-heading-color-light: #ffffff;
+  --form-paragraph-color-light: #cccccc;
+  --form-input-focus-light: #a1a6ff;
+  --form-button-gradient-light: linear-gradient(to right, #535C91, #6e6f8f);
+  --form-button-hover-light: #888bbf;
+  --form-link-color-light: #c1c7ff;
+  --form-link-hover-color-light: #d1d7ff;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  width: 100%; /* Ensure the container takes full width */
+  height: 100vh;
+  padding: 20px; /* Add some padding */
+  transition: background 0.5s;
+}
+
+body.dark .todo-container {
+  background: var(--background-l);
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+.left-section, .right-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.right-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.todo-list {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .todo-list {
+  --background-l: linear-gradient(to bottom right,#070F2B, #6e6f8f);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.todo-list:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .todo-list:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.todo-list h1 {
+  color: #5c6bc0;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease-out;
+}
+
+body.dark .todo-list h1 {
+  color: var(--form-heading-color-light);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-input {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-input .reset-icon {
+  font-size: 20px;
+  color: #5c6bc0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.dark .task-input .reset-icon {
+  color: var(--form-heading-color-light);
+}
+
+.task-input .reset-icon:hover {
+  color: #4a58a0;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+body.dark .task-input .reset-icon:hover {
+  color: var(--form-link-hover-color-light);
+}
+
+.task-input input {
+  border: 2px solid #a0c1ff;
+  border-radius: 4px;
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+body.dark .task-input input {
+  background: #ffffff;
+  color: var(--form-paragraph-color-light);
+  border-color: #010000;
+}
+
+.task-input input:focus {
+  border-color: #5c6bc0;
+}
+
+body.dark .task-input input:focus {
+  border-color: var(--form-input-focus-light);
+}
+
+.task-input button {
+  background-color: #5c6bc0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark .task-input button {
+  background: var(--form-button-gradient-light);
+}
+
+.task-input button:hover {
+  background-color: #4a58a0;
+  transform: scale(1.1);
+}
+
+body.dark .task-input button:hover {
+  background-color: var(--form-button-hover-light);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  background-color: #a0c1ff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark li {
+  background-color: #333;
+  color: var(--form-paragraph-color-light);
+}
+
+li:hover {
+  background-color: #d4e2ff;
+  transform: translateX(10px);
+}
+
+body.dark li:hover {
+  background-color: #444;
+}
+
+li.completed {
+  background-color: #e9bfff;
+  text-decoration: line-through;
+  animation: fadeInLineThrough 0.5s ease;
+}
+
+body.dark li.completed {
+  background-color: #535C91;
+}
+
+@keyframes fadeInLineThrough {
+  from {
+    text-decoration: none;
+  }
+  to {
+    text-decoration: line-through;
+  }
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+li span:hover {
+  color: #4a58a0;
+}
+
+body.dark li span:hover {
+  color: var(--form-link-hover-color-light);
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+li button {
+  background-color: #d165c9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark li button {
+  background: var(--form-button-gradient-light);
+}
+
+li button:hover {
+  background-color: #ff4a4a;
+  transform: scale(1.1);
+}
+
+body.dark li button:hover {
+  background-color: var(--form-button-hover-light);
+}
+
+.performance-graph, .statistics {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .performance-graph, body.dark .statistics {
+  background: #070F2B;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.performance-graph:hover, .statistics:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .performance-graph:hover, body.dark .statistics:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.statistics {
+  text-align: center;
+}
+
+.statistics p {
+  margin: 5px 0;
+}
+
+body.dark .statistics p {
+  color: var(--form-paragraph-color-light);
+}

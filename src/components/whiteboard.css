@@ -1,0 +1,121 @@
+/* Dark mode variables */
+body.dark {
+  --form-background-light: linear-gradient(to bottom right,#070F2B, #6e6f8f);
+  --form-heading-color-light: #c1c7ff;
+  --form-paragraph-color-light: #cccccc;
+  --form-input-focus-light: #a1a6ff;
+  --form-button-gradient-light: linear-gradient(to right, #535C91, #6e6f8f);
+  --form-button-hover-light: #888bbf;
+  --form-link-color-light: #c1c7ff;
+  --form-link-hover-color-light: #d1d7ff;
+}
+
+.whiteboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-family: 'Mina', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark .whiteboard-container {
+  color: var(--form-paragraph-color-light);
+}
+
+.whiteboard-canvas {
+  border: 2px solid #333;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+body.dark .whiteboard-canvas {
+  border-color: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 20px; /* Increased padding for larger toolbar */
+  width: 100%;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .toolbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tool-button {
+  padding: 15px 30px;
+  margin: 0 12px;
+  border: none;
+  background: linear-gradient(to right, #a0c1ff, #e9bfff);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .tool-button {
+  background: var(--form-button-gradient-light);
+}
+
+.tool-button.active {
+  background-color: #4cae4c;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+body.dark .tool-button.active {
+  background-color: #4cae4c;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+.tool-button:hover {
+  background-color: #449d44;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .tool-button:hover {
+  background-color: var(--form-button-hover-light);
+}
+
+.color-picker,
+.brush-size-slider {
+  margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.color-picker input[type="color"],
+.brush-size-slider input[type="range"] {
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+body.dark .color-picker input[type="color"],
+body.dark .brush-size-slider input[type="range"] {
+  background-color: #333;
+  color: var(--form-heading-color-light);
+}
+
+.color-picker input[type="color"]:hover,
+.brush-size-slider input[type="range"]:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+body.dark .color-picker input[type="color"]:hover,
+body.dark .brush-size-slider input[type="range"]:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}

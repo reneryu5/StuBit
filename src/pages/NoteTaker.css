@@ -1,0 +1,269 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+/* Light mode variables */
+:root {
+    --background-light: white;
+    --text-light: black;
+    --input-border-light: #ddd;
+    --input-hover-light: #a0c1ff;
+    --note-active-light: #a0c1ff;
+    --note-active-text-light: white;
+    --sidebar-button-light: #d165c9;
+    --sidebar-button-hover-light: #a04d94;
+    --note-button-light: #4a58a0;
+    --note-button-hover-light: #374079;
+    --note-shadow-light: rgba(0,0,0,0.1);
+    --note-shadow-hover-light: rgba(0,0,0,0.3);
+    --note-taker-shadow-light: rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    --note-taker-shadow-hover-light: inset 0 -3em 3em rgba(0,0,0,0.1), 0 0 0 2px rgb(190, 190, 190), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    --preview-background-light: rgba(0, 0, 0, 0.02);
+    --bold-button-light: #4a90e2;
+    --italics-button-light: #50e3c2;
+}
+
+/* Dark mode variables */
+body.dark {
+    --background-light: linear-gradient(to bottom, #535C91, #9290C3);
+    --text-light: white;
+    --input-border-light: #666;
+    --input-hover-light: #5c6bc0;
+    --note-active-light: #535C91;
+    --note-active-text-light: white;
+    --sidebar-button-light: #a04d94;
+    --sidebar-button-hover-light: #d165c9;
+    --note-button-light: #374079;
+    --note-button-hover-light: #4a58a0;
+    --note-shadow-light: rgba(0,0,0,0.5);
+    --note-shadow-hover-light: rgba(0,0,0,0.7);
+    --note-taker-shadow-light: rgba(0,0,0,0.5), 0.3em 0.3em 1em rgba(0,0,0,0.7);
+    --note-taker-shadow-hover-light: inset 0 -3em 3em rgba(0,0,0,0.5), 0 0 0 2px rgb(190, 190, 190), 0.3em 0.3em 1em rgba(0,0,0,0.7);
+    --preview-background-light: rgba(255, 255, 255, 0.02);
+    --note-text-dark: white;
+    --bold-button-light: #001f3f;
+    --italics-button-light: #007bff;
+}
+
+body {
+    background: var(--background-light);
+    color: var(--text-light);
+}
+
+.note-taker {
+    display: center;
+    top: 20px;
+    box-sizing: border-box;
+    width: 90%;
+    height: auto;
+    margin: 40px auto;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: var(--note-taker-shadow-light);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.note-taker:hover {
+    box-shadow: var(--note-taker-shadow-hover-light);
+    transform: scale(1.02);
+}
+
+.notes {
+    display: flex;
+    width: 100%;
+}
+
+.note-main {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    position: relative;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid var(--input-border-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-button {
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--sidebar-button-light);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-button:hover {
+    transform: scale(1.1);
+    color: var(--sidebar-button-hover-light);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.sidebar-header h1 {
+    margin: 0;
+}
+
+.sidebar-notes {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.sidebar-note {
+    padding: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sidebar-note-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-note button {
+    color: var(--note-button-light);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-note button:hover {
+    transform: scale(1.1);
+    color: var(--note-button-hover-light);
+}
+
+.sidebar-note p {
+    margin: 10px 0;
+}
+
+.sidebar-note small {
+    display: block;
+    color: var(--text-light);
+}
+
+.sidebar-note:hover {
+    background: var(--input-hover-light);
+}
+
+.sidebar-note.active,
+.sidebar-note.active small {
+    background: var(--note-active-light);
+    color: var(--note-active-text-light);
+}
+
+.main-note-edit,
+.main-note-preview {
+    height: 50vh;
+}
+
+.no-active-note {
+    width: 70%;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+.main-note-edit {
+    padding: 25px;
+    position: relative; /* Ensures proper positioning of buttons */
+}
+
+.note-input {
+    display: block;
+    border: 1px solid var(--input-border-light);
+    opacity: 0.7;
+    margin-bottom: 20px;
+    width: 97%;
+    padding: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: inherit;
+    background: transparent;
+    transition: border 0.3s ease;
+    color: var(--text-light);
+}
+
+.note-text {
+    display: block;
+    border: 1px solid var(--input-border-light);
+    margin-bottom: 20px;
+    opacity: 0.7;
+    width: 97%;
+    height: 180px;
+    padding: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: inherit;
+    background: transparent;
+    transition: border 0.3s ease;
+    color: var(--text-light);
+}
+
+.note-input:hover,
+.note-text:hover {
+    border: 1px solid var(--input-hover-light);
+}
+
+.main-note-preview {
+    background: var(--preview-background-light);
+    color: var(--note-text-dark);
+}
+
+.preview-title {
+    padding: 25px 25px 0 25px;
+    margin: 0;
+    color: var(--note-text-dark);
+}
+
+.markdown-preview {
+    padding: 0 25px 25px 25px;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: var(--note-text-dark);
+}
+
+.bold-button,
+.italics-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bold-button {
+    font-weight: bold;
+    background-color: var(--bold-button-light);
+    right: 160px; /* Adjusted for positioning on the right */
+}
+
+.italics-button {
+    font-style: italic;
+    background-color: var(--italics-button-light);
+    right: 25px; /* Adjusted for positioning on the right */
+}
+
+.bold-button:hover,
+.italics-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bold-button:active,
+.italics-button:active {
+    transform: scale(0.95);
+}

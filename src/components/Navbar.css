@@ -1,0 +1,65 @@
+/* Navbar styles */
+.navbar {
+  background: rgba(51, 51, 51, 0.8); /* Navbar with transparency */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex; /* Flexbox to align items side by side */
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+  padding: 8px 20px; /* Reduced padding for top and bottom */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 15px; /* Adjusted padding for links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px; /* Adjusted font size */
+}
+
+.nav-link:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+.theme-toggle-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+/* Light Theme Variables */
+.light .navbar {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+.light .nav-link {
+  color: #000;
+}
+
+.light .theme-toggle-btn {
+  color: #000;
+}
+
+/* Dark Theme Variables */
+.dark .navbar {
+  background: rgba(51, 51, 51, 0.8);
+  color: #fff;
+}
+
+.dark .nav-link {
+  color: #fff;
+}
+
+.dark .theme-toggle-btn {
+  color: #fff;
+}
